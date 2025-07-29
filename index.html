@@ -115,9 +115,13 @@
         }
 
         .carousel img {
-          width: 100%;
-          height: 300px;
-          object-fit: cover;
+          height: 500px;
+          max-height: 80vh;
+          width: auto;
+          flex-shrink: 0;
+          border-radius: 10px;
+          object-fit: contain;
+          margin: 0 auto;
         }
 
         .music {
@@ -214,14 +218,6 @@
       lado! 💘
     </p>
 
-    <div class="carousel">
-      <div class="carousel-track" id="carouselTrack">
-        <img src="https://picsum.photos/id/237/500/300" alt="Foto 1" />
-        <img src="https://picsum.photos/id/238/500/300" alt="Foto 2" />
-        <img src="https://picsum.photos/id/239/500/300" alt="Foto 3" />
-      </div>
-    </div>
-
     <audio controls autoplay="autoplay" loop id="musica">
       <source
         src="Post Malone - I Like You (A Happier Song) w. Doja Cat [Official Music Video].mp3"
@@ -229,6 +225,38 @@
       />
       Seu navegador não suporta áudio HTML5.
     </audio>
+
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <img
+          src="WhatsApp Image 2025-07-29 at 13.52.06 (1).jpeg"
+          alt="Foto 1"
+        />
+        <img
+          src="WhatsApp Image 2025-07-29 at 13.52.06 (2).jpeg"
+          alt="Foto 2"
+        />
+        <img src="WhatsApp Image 2025-07-29 at 13.52.06.jpeg" alt="Foto 3" />
+        <img
+          src="WhatsApp Image 2025-07-29 at 13.52.07 (1).jpeg"
+          alt="Foto 4"
+        />
+        <img
+          src="WhatsApp Image 2025-07-29 at 13.52.07 (2).jpeg"
+          alt="Foto 5"
+        />
+        <img src="WhatsApp Image 2025-07-29 at 13.52.07.jpeg" alt="Foto 6" />
+        <img
+          src="WhatsApp Image 2025-07-29 at 13.53.46 (1).jpeg"
+          alt="Foto 7"
+        />
+        <img
+          src="WhatsApp Image 2025-07-29 at 13.53.46 (2).jpeg"
+          alt="Foto 8"
+        />
+        <img src="WhatsApp Image 2025-07-29 at 13.53.46.jpeg" alt="Foto 9" />
+      </div>
+    </div>
 
     <script>
       function mostrarMensagem() {
@@ -267,4 +295,3 @@
     </script>
   </body>
 </html>
-
