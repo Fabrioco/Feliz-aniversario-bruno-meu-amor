@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Aniversário, Bruno! ❤️</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        color: #fff;
+        text-align: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-top: 40px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      p {
+        font-size: 1.5rem;
+        max-width: 700px;
+        margin: 20px auto;
+        animation: fadeIn 3s ease-in-out;
+        padding: 0 10px;
+      }
+
+      button {
+        padding: 12px 24px;
+        font-size: 1rem;
+        background-color: #fff;
+        color: #d72638;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #ffe3e3;
+      }
+
+      #extraMessage {
+        margin-top: 20px;
+        font-size: 1.3rem;
+        display: none;
+        animation: fadeIn 1s ease-in-out;
+        padding: 0 10px;
+      }
+
+      .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        transform: rotate(45deg);
+        animation: floatUp 5s linear infinite;
+        opacity: 0.7;
+        z-index: 1;
+      }
+
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+      }
+
+      .heart::before {
+        top: -10px;
+        left: 0;
+      }
+
+      .heart::after {
+        left: -10px;
+        top: 0;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+
+        button {
+          font-size: 0.9rem;
+          padding: 10px 20px;
+        }
+
+        #extraMessage {
+          font-size: 1.1rem;
+        }
+
+        .carousel {
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          border-radius: 0;
+        }
+
+        .carousel img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        .music {
+          margin-top: 0;
+        }
+
+        audio {
+          width: 100%;
+          max-width: none;
+          margin-top: 10px;
+        }
+
+        iframe {
+          border-radius: 0;
+          margin-top: 10px;
+          width: 100%;
+          max-width: none;
+        }
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) rotate(45deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(45deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .carousel {
+        margin-top: 40px;
+        width: 100%;
+        max-width: 500px;
+        margin-inline: auto;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel img {
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 10px;
+        object-fit: cover;
+        aspect-ratio: 5 / 3;
+      }
+
+      .music {
+        margin-top: 30px;
+      }
+
+      audio {
+        width: 90%;
+        max-width: 500px;
+        margin-top: 20px;
+      }
+
+      iframe {
+        border-radius: 12px;
+        margin-top: 10px;
+        width: 90%;
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Feliz Aniversário, Bruno! 🎉</h1>
+    <p>
+      Hoje é o seu dia, e eu quero te lembrar o quanto você é especial para mim.
+      Que a vida te presenteie com os sonhos mais lindos. Eu te amo! 💖
+    </p>
+
+    <button onclick="mostrarMensagem()">Clique para mais amor</button>
+    <p id="extraMessage">
+      Você é a melhor parte dos meus dias. Que venham muitos aniversários ao seu
+      lado! 💘
+    </p>
+
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <img src="https://picsum.photos/id/237/500/300" alt="Foto 1" />
+        <img src="https://picsum.photos/id/238/500/300" alt="Foto 2" />
+        <img src="https://picsum.photos/id/239/500/300" alt="Foto 3" />
+      </div>
+    </div>
+
+    <audio controls autoplay="autoplay" loop id="musica">
+      <source
+        src="Post Malone - I Like You (A Happier Song) w. Doja Cat [Official Music Video].mp3"
+        type="audio/mpeg"
+      />
+      Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <script>
+      function mostrarMensagem() {
+        const msg = document.getElementById("extraMessage");
+        msg.style.display = "block";
+      }
+
+      function criarCoracao() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      setInterval(criarCoracao, 300);
+
+      const track = document.getElementById("carouselTrack");
+      const imagens = track.querySelectorAll("img");
+      let index = 0;
+
+      setInterval(() => {
+        index = (index + 1) % imagens.length;
+        const width = imagens[0].clientWidth;
+        track.style.transform = `translateX(-${width * index}px)`;
+      }, 3000);
+
+      const audio = document.getElementById("musica");
+
+      audio.addEventListener("loadedmetadata", () => {
+        audio.currentTime = 65;
+      });
+    </script>
+  </body>
+</html>
+
